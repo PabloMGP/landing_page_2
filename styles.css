@@ -8,6 +8,7 @@
  }
 
  .main-container {
+     transition: 0.2s;
      position: absolute;
      right: 0;
      width: 100%;
@@ -22,7 +23,8 @@
  }
 
  .main-container.active {
-    right: 300px;
+     transition: 0.2s;
+     right: 300px;
  }
 
  header {
@@ -47,7 +49,7 @@
      position: relative;
      width: 60px;
      height: 60px;
-     background: url(https://res.cloudinary.com/dsitzow1q/image/upload/v1681222546/portfolio_website/close_mgfbjj.png);
+     background: url(https://res.cloudinary.com/dsitzow1q/image/upload/v1681221292/portfolio_website/menu_ozmcsr.png);
      background-repeat: no-repeat;
      background-size: 30px;
      background-position: center;
@@ -55,7 +57,7 @@
  }
 
  .toggle-navbar.active {
-     background: url(https://res.cloudinary.com/dsitzow1q/image/upload/v1681221292/portfolio_website/menu_ozmcsr.png);
+     background: url(https://res.cloudinary.com/dsitzow1q/image/upload/v1681222546/portfolio_website/close_mgfbjj.png);
      background-repeat: no-repeat;
      background-size: 24px;
      background-position: center;
@@ -123,16 +125,11 @@
      padding: 10px 10px 10px 10px;
      text-decoration: none;
      border-radius: 8px;
-     color: #002b49;
      text-transform: uppercase;
      letter-spacing: 2px;
      color: white;
      gap: 5px;
      font-weight: 400;
- }
-
- .text img {
-     height: 25px;
  }
 
  .main-links a:nth-child(2) {
@@ -143,7 +140,6 @@
      padding: 10px 3px 10px 10px;
      text-decoration: none;
      border-radius: 8px;
-     color: #002b49;
      text-transform: uppercase;
      letter-spacing: 2px;
      color: white;
@@ -160,12 +156,15 @@
      padding: 10px 10px 10px 10px;
      text-decoration: none;
      border-radius: 8px;
-     color: #002b49;
      text-transform: uppercase;
      letter-spacing: 2px;
      color: white;
      gap: 5px;
      font-weight: 400;
+ }
+
+ .text img {
+     height: 25px;
  }
 
  .main-links a:nth-child(1):hover {
@@ -190,33 +189,65 @@
  }
 
  .menu ul {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 1000px;
-    list-style: none;
+     display: flex;
+     flex-direction: column;
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 300px;
+     height: 100%;
+     text-decoration: none;
+     font-size: 1em;
+     font-weight: bold;
+     justify-content: center;
+     align-items: center;
+     list-style: none;
+     background-color: #002b49;
+     color: white;
+     mix-blend-mode: overlay;
  }
 
  .menu ul li a {
-    text-decoration: none;
-    font-size: 12px;
-    color:#002b49;
+     text-decoration: none;
+     color: #002b49;
+     line-height: 3em;
  }
 
 
- @media (max-width: 400px) {
+ @media (max-width: 798px) {
+
      .main-container,
      .main-container header h2 {
-         padding: 10px;
+         padding: 40px;
          font-size: 1em;
+     }
+
+     header {
+         padding: 10px 20px;
+     }
+
+     .toggle-navbar {
+         display: block;
+     }
+
+     .menu:active {
+         position: fixed;
+         top: 0;
+         right: -300px;
+         width: 300px;
+         height: 100%;
+         padding: 80px 40px 20px;
+         background-color: #002b49;
+         z-index: 3;
+         transition: 0.3s;
+     }
+     
+     .menu.active {
+         right: 0;
      }
 
      .text h2 {
          font-size: 2em;
      }
  }
+
