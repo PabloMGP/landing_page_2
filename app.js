@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
 const toggleMenu = document.querySelector(".toggle-navbar");
 const mainContainer = document.querySelector(".main-container");
 
-// Toggle menu 
+ // Toggle menu 
 toggleMenu.addEventListener("click", () => {
     toggleMenu.classList.toggle("active");
     mainContainer.classList.toggle("active");
